@@ -8,15 +8,17 @@
     <script>
         $(document).ready(function(){
             $("img").click(function(){
-                $(this).slideToggle("slow");
+                $(this).toggle("slow");
+                console.log($(this).display);
             })
             $("button").click(function(){
-                var images = $("img")
-                for (i = 0; i < images.length; i++){
-                    if (images[i].display = "none"){
-                        $(this).slideToggle("slow");
-                    };
-                };
+                $("img").each(function(index,value){
+                    console.log($(this).src);
+                    console.log($(this));
+                    if ($(this).is(":hidden")){
+                        $(this).toggle("slow");
+                    }
+                })
             })
         })
     </script>
